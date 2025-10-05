@@ -4,9 +4,8 @@
 <link rel="stylesheet" href="style.css">
 <script>
   document.documentElement.classList.add('preload');
-  document.documentElement.style.visibility='hidden';
   window.addEventListener('DOMContentLoaded', function(){
-    document.documentElement.style.visibility='visible';
+    document.body.classList.add('loaded');
     document.documentElement.classList.remove('preload');
   });
 </script>
@@ -70,6 +69,18 @@
             </div>
           </section>
         </div>
+
+        <section class="card glass">
+          <div class="toolbar" style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <h3 style="margin:0;">Banco de Medicamentos</h3><div class="grow"></div>
+            <button id="btnNuevoMedicamento" class="btn sm" type="button">+ Nuevo medicamento</button>
+          </div>
+          <div class="table-wrap">
+            <table id="adminMedicamentosTable"><thead>
+              <tr><th>Fármaco</th><th>Grupo</th><th>Dilución</th><th>Comentarios</th><th style="width:160px;">Acciones</th></tr>
+            </thead><tbody></tbody></table>
+          </div>
+        </section>
       </main>
     </div>
   </div>
@@ -130,6 +141,22 @@
           <div class="field" style="grid-column:1 / -1"><label for="guiaURL">Enlace (PDF o externo)</label><input id="guiaURL" type="url" placeholder="https://…"></div>
         </div>
         <div class="auth-actions" style="margin-top:14px;"><button class="btn grow" type="submit">Guardar</button><button class="btn secondary" type="button" data-close-guia>Cancelar</button></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL MEDICAMENTO -->
+  <div class="modal-backdrop" id="modalMedicamento">
+    <div class="modal glass">
+      <header><h3 style="margin:0;">Editar medicamento</h3><button class="btn secondary sm" type="button" data-close-med>✕</button></header>
+      <form id="medicamentoForm"><input type="hidden" id="medId">
+        <div class="grid">
+          <div class="field"><label for="medNombre">Fármaco</label><input id="medNombre" type="text" required></div>
+          <div class="field"><label for="medGrupo">Grupo farmacológico</label><input id="medGrupo" type="text" required></div>
+          <div class="field" style="grid-column:1 / -1"><label for="medDilucion">Dilución sugerida</label><textarea id="medDilucion" rows="2" required></textarea></div>
+          <div class="field" style="grid-column:1 / -1"><label for="medComentarios">Comentarios y dosificación</label><textarea id="medComentarios" rows="3" required></textarea></div>
+        </div>
+        <div class="auth-actions" style="margin-top:14px;"><button class="btn grow" type="submit">Guardar</button><button class="btn secondary" type="button" data-close-med>Cancelar</button></div>
       </form>
     </div>
   </div>

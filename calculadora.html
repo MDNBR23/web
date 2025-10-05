@@ -4,9 +4,8 @@
 <link rel="stylesheet" href="style.css">
 <script>
   document.documentElement.classList.add('preload');
-  document.documentElement.style.visibility='hidden';
   window.addEventListener('DOMContentLoaded', function(){
-    document.documentElement.style.visibility='visible';
+    document.body.classList.add('loaded');
     document.documentElement.classList.remove('preload');
   });
 </script>
