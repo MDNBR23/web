@@ -22,7 +22,7 @@
     </aside>
     <div class="content">
       <header class="header">
-        <button id="btnToggleSidebar" class="btn secondary sm" type="button">Contraer</button>
+        <button id="btnToggleSidebar" type="button"></button>
         <h2>Administración</h2>
         <div class="user-info">
           <img id="avatarTop" alt="">
@@ -117,6 +117,7 @@
             <div class="field"><label for="anuncioTitulo">Título</label><input id="anuncioTitulo" type="text"></div>
             <div class="field"><label for="anuncioFecha">Fecha</label><input id="anuncioFecha" type="date"></div>
             <div class="field"><label for="anuncioTexto">Contenido</label><textarea id="anuncioTexto"></textarea></div>
+            <div class="field"><label class="switch"><input id="anuncioGlobal" type="checkbox" checked><span class="slider"></span><span>Visible para todos los usuarios</span></label></div>
           </div>
           <div>
             <div class="field"><label>Imagen (opcional)</label><img id="anuncioPreview" class="thumb" alt="" style="width:120px;height:120px;border-radius:12px;border:1px solid var(--border);object-fit:cover;"></div>
@@ -139,6 +140,7 @@
           <div class="field"><label for="guiaFecha">Fecha</label><input id="guiaFecha" type="date"></div>
           <div class="field" style="grid-column:1 / -1"><label for="guiaTexto">Contenido</label><textarea id="guiaTexto"></textarea></div>
           <div class="field" style="grid-column:1 / -1"><label for="guiaURL">Enlace (PDF o externo)</label><input id="guiaURL" type="url" placeholder="https://…"></div>
+          <div class="field" style="grid-column:1 / -1"><label class="switch"><input id="guiaGlobal" type="checkbox" checked><span class="slider"></span><span>Visible para todos los usuarios</span></label></div>
         </div>
         <div class="auth-actions" style="margin-top:14px;"><button class="btn grow" type="submit">Guardar</button><button class="btn secondary" type="button" data-close-guia>Cancelar</button></div>
       </form>
